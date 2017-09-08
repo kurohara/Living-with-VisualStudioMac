@@ -2,14 +2,21 @@
 
 I'm just trying to use VisualStudio for Mac(2017) for creating macos application.
 
-1. StoryBoard doesn't work, or may be useless.  
+1. StoryBoard doesn't work properly, or may be useless.  
 It was easy to decide the way I have to aim, DONT USE IT.  
-We can write all UI code in C#, like we sometimes do in Swift language.  
-There was some pitfall at startup, so I wrote template for programmer who have same opinion.
+We can write all UI code in C#, like we sometimes do in Swift or Objective-C language.  
+I wrote template code of program startup part so that I (and somebody in stray about same matter) can easyly startup macos, C# project.  
 
-Main.cs
+Before using this code, you have to remove StoryBoard file and remove its entry from info.plist.  
 
 ```csharp
+/**
+ * Main.cs
+ * Replace your Main.cs with this code, then customize menu part for your application.
+ * 
+ * The code part creating application menu was originally written by Hoon H, (in Swift language).
+ *  (https://github.com/eonil/CocoaProgrammaticHowtoCollection/tree/2a2611cc751a1a7784570efae57e86adf40c29bb/ComponentUsages/ApplicationMenu).
+ */
 using AppKit;
 
 namespace TestCocoa
@@ -18,14 +25,14 @@ namespace TestCocoa
     {
         static void Main(string[] args)
         {
-			NSApplication.Init();
+            NSApplication.Init();
             var app = NSApplication.SharedApplication;
             System.Diagnostics.Debug.WriteLine("test");
 
             NSApplication.SharedApplication.ServicesMenu = BuildServicesMenu();
             NSApplication.SharedApplication.MainMenu = BuildMainMenu(NSApplication.SharedApplication.ServicesMenu);
             NSApplication.SharedApplication.Delegate = new AppDelegate();
-			NSApplication.Main(args);
+            NSApplication.Main(args);
         }
 
         static NSMenu BuildMainMenu(NSMenu servicesMenu)
@@ -69,7 +76,7 @@ namespace TestCocoa
             quitMeItem.Target = NSApplication.SharedApplication;
             appMenu.AddItem(quitMeItem);
 
-			//
+            //
             NSMenu fileMenu = new NSMenu("File");
 
             mainFileMenuItem.Submenu = fileMenu;
