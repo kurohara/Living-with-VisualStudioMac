@@ -26,14 +26,13 @@ namespace TestCocoa
     {
         static void Main(string[] args)
         {
-            NSApplication.Init();
+			NSApplication.Init();
             var app = NSApplication.SharedApplication;
-            System.Diagnostics.Debug.WriteLine("test");
 
-            NSApplication.SharedApplication.ServicesMenu = BuildServicesMenu();
-            NSApplication.SharedApplication.MainMenu = BuildMainMenu(NSApplication.SharedApplication.ServicesMenu);
-            NSApplication.SharedApplication.Delegate = new AppDelegate();
-            NSApplication.Main(args);
+            app.ServicesMenu = BuildServicesMenu();
+            app.MainMenu = BuildMainMenu(app.ServicesMenu);
+            app.Delegate = new AppDelegate();
+			NSApplication.Main(args);
         }
 
         static NSMenu BuildMainMenu(NSMenu servicesMenu)
