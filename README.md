@@ -5,7 +5,7 @@ I'm just trying to use VisualStudio for Mac(2017) for creating macos application
 1. StoryBoard doesn't work properly, or may be useless.  
 It was easy to decide the way I have to aim, DONT USE IT.  
 We can write all UI code in C#, like we sometimes do in Swift or Objective-C language.  
-I wrote template code of program startup part so that I (and somebody in stray about same matter) can easyly startup macos, C# project.  
+I wrote template code of program startup part so that I (and somebody in stray about same matter) can easyly startup macoses C# project.  
 
 Before using this code, you have to remove StoryBoard file and remove its entry from info.plist.  
 
@@ -19,6 +19,7 @@ Before using this code, you have to remove StoryBoard file and remove its entry 
  */
 using AppKit;
 
+// Change 'TestCocoa' to your application's name.
 namespace TestCocoa
 {
     static class MainClass
@@ -81,7 +82,7 @@ namespace TestCocoa
 
             mainFileMenuItem.Submenu = fileMenu;
 
-            //
+            // You have to setup your document type to use file menu...
             NSMenuItem newDocumentItem = new NSMenuItem("New...", new ObjCRuntime.Selector("newDocument:"), "n");
             newDocumentItem.Target = NSDocumentController.SharedDocumentController;
             fileMenu.AddItem(newDocumentItem);
