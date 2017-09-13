@@ -1,13 +1,13 @@
 # Living with VisualStudioMac
 
-### Creating macos application...(not smartphone application)
+### Creating macos applications...(not smartphone applications)
 
 I was just trying to use VisualStudio for Mac(2017) for creating macos application, and got in stuck easily...  
 
 1. StoryBoard doesn't work properly, or may be useless.  
 It was easy to decide the way I have to aim, DONT USE IT.  
 We can write all UI code in C#, like we sometimes do in Swift or Objective-C language.  
-I wrote template code of program startup part so that I (and somebody in stray about same matter) can easyly startup macoses C# project.  
+I wrote template code of program startup part so that I (and somebody in stray about same matter) can easily startup macoses C# project.  
 
 Before using this code, you have to remove StoryBoard file and remove its entry from info.plist.  
 
