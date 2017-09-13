@@ -1,5 +1,7 @@
 # Living with VisualStudioMac
 
+### Creating macos application...(not smartphone application)
+
 I was just trying to use VisualStudio for Mac(2017) for creating macos application, and got in stuck easily...  
 
 1. StoryBoard doesn't work properly, or may be useless.  
